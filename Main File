@@ -1,0 +1,46 @@
+import turtle
+import random
+#Random colour switcher
+colours=["red","blue","yellow","green","black","purple","pink"]
+def random_colour_Line(x):
+    for i in range(len(colours)):
+        turtle.pencolor(random.choice(colours))
+        turtle.forward(0+x)
+# Square shape maker
+def square(x,y):
+    turtle.penup()
+    turtle.goto(0+x,0+y)
+    turtle.pendown()
+    for i in range(4):
+        turtle.forward(50)
+        turtle.right(90)
+# flower shape maker
+def flower(x,y):
+    turtle.penup()
+    turtle.goto(0+x,0+y)
+    turtle.pendown()
+    for i in range(4):
+        turtle.circle(50,180)
+        turtle.left(90)
+# Using functions to make random drawings
+turtle.fillcolor(random.choice(colours))
+turtle.begin_fill()
+square(100,100)
+turtle.end_fill()
+turtle.fillcolor(random.choice(colours))
+turtle.begin_fill()
+square(50,50)
+turtle.end_fill()
+turtle.fillcolor(random.choice(colours))
+turtle.begin_fill()
+flower(-50,-50)
+turtle.end_fill()
+turtle.penup()
+turtle.goto(-300,-200)
+turtle.pendown()
+random_colour_Line(100)
+turtle.left(45)
+random_colour_Line(50)
+turtle.right(60)
+random_colour_Line(100)
+turtle.done()
